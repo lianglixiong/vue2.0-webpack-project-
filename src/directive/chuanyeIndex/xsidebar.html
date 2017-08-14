@@ -1,0 +1,108 @@
+<div>
+	<div ng-transclude class="nav-content" ng-class="{'sidebar-move-right':sideout,'sidebar-move-left':sidein}">
+		<button class="left-button" ng-click="changehide()">left</button>
+		<div id="shou" style="z-index: 4;background: #fff;height: 100%;">
+			<div class="_1G5Zvrg1d7lN88qvhh6YPP">
+				<div class="_1UBMqD_RSfWYicIiSlv77n _38_Z28Q4LpfXqInYVZPJZI">
+					<header class="clearfix">
+						<div class="content node">
+							<form class="_1UyOYKRtptKK0v1qcKLhQS">
+								<div class="_3q4mrjJOs4yXQXAAlhODfw">
+									<input type="text" name="keyword" placeholder="搜索商品" maxlength="15" class="keyword"><i class="icon-cancel ui-decoration-hyperlink"></i></div>
+								<div class="goback ui-decoration-hyperlink qu" ng-click="changehide()">取消</div>
+								<div class="goback ui-decoration-hyperlink shou" style="display: none;">搜索</div>
+							</form>
+						</div><span class="right-btn ui-decoration-hyperlink " ng-click="changehide()"><i class="img-icon home"></i></span></header>
+				</div>
+				<dl class="_2zSykbfnp9HX1QFp7QarD5">
+					<dt><i class="img-icon search-hot"></i>
+                    <!-- react-text: 3086 -->大家都在搜
+                    <!-- /react-text -->
+                </dt>
+					<dd class="ui-decoration-hyperlink highlight" ng-repeat="n in news  track by $index">{{n}}</dd>
+
+				</dl>
+				<!--<dl class="_2zSykbfnp9HX1QFp7QarD5">-->
+					<!--<dt><i class="img-icon search-history"></i>-->
+                    <!--历史搜索-->
+                  <!--<i class="img-icon search-clear ui-decoration-hyperlink"></i></dt>-->
+					<!-- <dd class="ui-decoration-hyperlink">面膜</dd> -->
+					<!--<i class="history" style=" font-style:normal"></i>
+
+				</dl>-->
+
+				<dl class="jVmPCc8t9niUxq0aC4XcD">
+					<dd ng-repeat='n in seel'>{{n}}</dd>
+				</dl>
+				<!-- react-empty: 3102 -->
+			</div>
+			<div ng-show="false" class="_1G5Zvrg1d7lN88qvhh6YPP">
+				<xsearchheader></xsearchheader>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	/*全局样式*/
+	
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	
+	.left-button {
+		float: right;
+	}
+	/*组件的样式*/
+	/*向左滑动的动画*/
+	
+	@keyframes moveLeft {
+		from {
+			transform: translateX(-100%);
+		}
+		to {}
+	}
+	
+	.sidebar-move-left {
+		animation: moveLeft;
+		/*持续时间*/
+		animation-duration: 1s;
+		/*动画播放次数*/
+		animation-iteration-count: 1;
+		/*执行方向，动画执行结束时保持在它结束时的状态*/
+		animation-fill-mode: forwards;
+	}
+	/*向右边滑动的动画*/
+	
+	@keyframes moveRight {
+		from {}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+	
+	.sidebar-move-right {
+		animation: moveRight;
+		/*持续时间*/
+		animation-duration: 1s;
+		/*动画播放次数*/
+		animation-iteration-count: 1;
+		/*执行方向，动画执行结束时保持在它结束时的状态*/
+		animation-fill-mode: forwards;
+	}
+	
+	.nav-content {
+		width: 100%;
+		position: fixed;
+		min-height: 100%;
+		top: 0;
+		left: 100%;
+		background-color: #fff;
+		/*调试代码时经常使用border，帮我们定位到div的一个区域*/
+		/*border: 1px solid black;*/
+		z-index: 10000;
+		/*使用透明度为0来隐藏元素*/
+		opacity: 1;
+	}
+</style>
